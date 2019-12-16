@@ -10,6 +10,7 @@ import com.sapient.productCatalogue.model.Product;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Integer>{
 
+	List<Product> findByProductName(String name);
 	List<Product> findByBrand(String brand);
 	List<Product> findByColor(String color);
 	List<Product> findByPrice(Double price);
