@@ -1,24 +1,21 @@
 package com.sapient.productCatalogue.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Seller {
 	
+	@Id
+	private int sellerId;
 	private int productId;
-	private String seller;
 	private int quantity;
+	
 	public int getProductId() {
 		return productId;
 	}
 	public void setProductId(int productId) {
 		this.productId = productId;
-	}
-	public String getSeller() {
-		return seller;
-	}
-	public void setSeller(String seller) {
-		this.seller = seller;
 	}
 	public int getQuantity() {
 		return quantity;
