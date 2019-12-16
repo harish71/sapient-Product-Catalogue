@@ -11,8 +11,8 @@ GET :-  http://localhost:8080/product/getBySku/{sku}
 GET :-  http://localhost:8080/product/{sellerName}/{productId}
 GET :-  http://localhost:8080/product/inventory/{productId}
 DELETE :- http://localhost:8080/product/delete/{id}
-
-
+POST :- http://localhost:8080/seller/save
+DELETE :- http://localhost:8080/seller/delete/{id}
       
 Ref - Product.json
 {
