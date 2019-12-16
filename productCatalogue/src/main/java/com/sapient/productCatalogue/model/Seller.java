@@ -7,10 +7,23 @@ import javax.persistence.Id;
 public class Seller {
 	
 	@Id
-	private int sellerId;
+	private int id;
+	private String sellerName;
 	private int productId;
 	private int quantity;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getSellerName() {
+		return sellerName;
+	}
+	public void setSellerName(String sellerName) {
+		this.sellerName = sellerName;
+	}
 	public int getProductId() {
 		return productId;
 	}

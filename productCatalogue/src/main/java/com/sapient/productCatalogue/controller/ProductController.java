@@ -3,8 +3,11 @@ package com.sapient.productCatalogue.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sapient.productCatalogue.model.Product;
@@ -15,6 +18,16 @@ public class ProductController {
 
 	@Autowired
 	ProductService service;
+	
+	@PostMapping("/product/save")
+	public void saveProduct(@RequestBody Product product) {
+		service.saveProduct(product);
+	}
+	
+	@DeleteMapping("/product/delete/{id}")
+	public void deleteProduct(@PathVariable int id) {
+		service.deleteProduct(id);
+	}
 	
 	@GetMapping("/product/getByBrand/{brand}")
 	public List<Product> getProductByBrand(@PathVariable String brand) {
@@ -49,5 +62,19 @@ public class ProductController {
 		List<Product> result = service.getProductBySku(sku);
 		
 		return result;
+	}
+	
+	@GetMapping("/product/{sellerName}/{productId}")
+	public long getQuantityBySeller(@PathVariable String sellerName, @PathVariable int productId) {
+		long count = service.getProductQuantity(sellerName,productId);
+		
+		return count;
+	}
+	
+	@GetMapping("product/inventory/{productId}")
+	public long getInventory(@PathVariable int productId) {
+		long count = 0;
+		count = service.getInventory(productId);
+		return count;
 	}
 }

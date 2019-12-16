@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sapient.productCatalogue.model.Product;
+import com.sapient.productCatalogue.model.Seller;
 import com.sapient.productCatalogue.repository.ProductRepository;
 import com.sapient.productCatalogue.repository.SellerRepository;
 
@@ -18,6 +19,13 @@ public class ProductService {
 	@Autowired
 	SellerRepository sellerRepo;
 	
+	public void saveProduct(Product product) {
+		productRepo.save(product);
+	}
+	
+	public void deleteProduct(int id) {
+		productRepo.deleteById(id);
+	}
 	public List<Product> getProductByBrand(String brand){
 		List<Product> result;
 		result = productRepo.findByBrand(brand);
@@ -46,5 +54,20 @@ public class ProductService {
 		List<Product> result;
 		result = productRepo.findByPrice(price);
 		return result;
+	}
+	
+	public long getProductQuantity(String sellerName, int productId) {
+		List<Seller> seller = sellerRepo.findBySellerNameAndProductId(sellerName, productId);
+		long count = 0;
+		count = seller.stream().map(s->s.getQuantity()).reduce(0,Integer::sum);
+		return count;
+	}
+	
+	public long getInventory(int productId) {
+		long count = 0;
+		
+		List<Seller> seller = sellerRepo.findByProductId(productId);
+		count = seller.stream().map(s->s.getQuantity()).reduce(0, Integer::sum);
+		return count;
 	}
 }

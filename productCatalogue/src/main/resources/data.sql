@@ -9,3 +9,18 @@ insert into product values(8,'levis','red',2200,'polo-shirt',38,'sku8');
 insert into product values(9,'arrow','black',3500,'blazer',38,'sku7');
 insert into product values(10,'blackberry','white',4000,'shirt',38,'sku10');
 
+
+insert into seller values(20,1,30,'abc');
+insert into seller values(21,2,50,'abc');
+insert into seller values(22,5,10,'abc');
+insert into seller values(23,3,30,'abc');
+insert into seller values(24,3,30,'xyz');
+insert into seller values(25,4,30,'abc');
+insert into seller values(26,6,30,'abc');
+insert into seller values(27,7,30,'abc');
+insert into seller values(28,8,50,'abc');
+insert into seller values(29,9,10,'abc');
+insert into seller values(30,10,25,'abc');
+insert into seller values(31,5,30,'xyz');
+insert into seller values(32,4,30,'xyz');
+insert into seller values(33,10,30,'xyz');
