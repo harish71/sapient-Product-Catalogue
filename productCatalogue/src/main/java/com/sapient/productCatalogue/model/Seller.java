@@ -1,5 +1,8 @@
 package com.sapient.productCatalogue.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Seller {
 	
 	private int productId;
