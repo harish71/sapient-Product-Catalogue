@@ -1,4 +1,19 @@
 # sapient-Product-Catalogue
+
+API Endpoints :- 
+
+POST :- http://localhost:8080/product/save
+GET :-  http://localhost:8080/product/getByBrand/{brand}
+GET :-  http://localhost:8080/product/getByColor/{color}
+GET :-  http://localhost:8080/product/getBySize/{size}
+GET :-  http://localhost:8080/product/getByPrice/{price}
+GET :-  http://localhost:8080/product/getBySku/{sku}
+GET :-  http://localhost:8080/product/{sellerName}/{productId}
+GET :-  http://localhost:8080/product/inventory/{productId}
+DELETE :- http://localhost:8080/product/delete/{id}
+
+
+      
 Ref - Product.json
 {
       "productId": 1,
